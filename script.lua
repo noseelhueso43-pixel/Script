@@ -14,8 +14,11 @@ Players.LocalPlayer.CharacterAdded:Connect(function(character)
 end)
 
 -- isfile("GazeEmotes_NewNEWN3WSaved.json") -> false
-RunService.RenderStepped:Connect(function(deltaTime)
-	character:FindFirstChild("HumanoidRootPart")
+RunService.RenderStepped:Connect(function(delta)
+    local character = Players.LocalPlayer.Character
+    if character and character:FindFirstChild("HumanoidRootPart") then
+        -- Aquí va la lógica que requiera el loop de RenderStepped
+    end
 end)
 
 local CoreGui = game:GetService("CoreGui")
